@@ -11,6 +11,7 @@ import SwiftUI
 struct s3archApp: App {
     var body: some Scene {
         WindowGroup {
+            KeysView()
             ContentView()
         }
     }
