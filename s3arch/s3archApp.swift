@@ -13,6 +13,7 @@ struct s3archApp: App {
         WindowGroup {
             KeysView()
             ContentView()
+            BucketsView()
         }
     }
 }
