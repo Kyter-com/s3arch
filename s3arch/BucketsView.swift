@@ -8,32 +8,38 @@
 import SwiftUI
 
 struct BucketsView: View {
-    @State private var showingSheet = false
-    
-    var body: some View {
-        NavigationStack {
-            Form {
-                
-            }
-            .navigationTitle("Buckets")
-            .toolbar {
-                Button(
-                    action: {
-                        showingSheet.toggle()
-                        print("Add Item:")
-                    },
-                    label: {
-                        Image(systemName: "gearshape")
-                    }).sheet(isPresented: $showingSheet) {
-                        print("Sheet dismissed!")
-                    } content: {
-                        KeysSheetView()
-                    }
-            }
+
+  @State private var showSettingsSheetView = false
+
+  var body: some View {
+    NavigationStack {
+      Form {
+        // TODO: Dynamically generate buckets from S3
+        NavigationLink {
+          BucketsView()
+        } label: {
+          Text("Test")
         }
+      }
+      .navigationTitle("Buckets")
+      .toolbar {
+        Button(
+          action: {
+            showSettingsSheetView.toggle()
+          },
+          label: {
+            Image(systemName: "gearshape")
+          }
+        ).sheet(
+          isPresented: $showSettingsSheetView,
+          content: {
+            SettingsSheetView()
+          })
+      }
     }
+  }
 }
 
 #Preview {
-    BucketsView()
+  BucketsView()
 }
