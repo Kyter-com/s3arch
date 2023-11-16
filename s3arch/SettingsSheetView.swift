@@ -5,7 +5,6 @@
 //  Created by Nick Reisenauer on 11/6/23.
 //
 
-import Security
 import SwiftUI
 
 struct SettingsSheetView: View {

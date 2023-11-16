@@ -10,10 +10,13 @@
 		341B63D82AF43F7C00AFE0EB /* s3archApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341B63D72AF43F7C00AFE0EB /* s3archApp.swift */; };
 		341B63DC2AF43F7D00AFE0EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 341B63DB2AF43F7D00AFE0EB /* Assets.xcassets */; };
 		341B63E02AF43F7D00AFE0EB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 341B63DF2AF43F7D00AFE0EB /* Preview Assets.xcassets */; };
+		342C6A902B0299C6004A8A8E /* SotoS3 in Frameworks */ = {isa = PBXBuildFile; productRef = 342C6A8F2B0299C6004A8A8E /* SotoS3 */; };
+		3441BC1C2B0590710021F7A5 /* AddNewProfileSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3441BC1B2B0590710021F7A5 /* AddNewProfileSheetView.swift */; };
+		3441BC222B05982E0021F7A5 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3441BC212B05982E0021F7A5 /* KeychainHelper.swift */; };
+		3466A7AA2B056D6400C9EC99 /* ProfilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3466A7A92B056D6400C9EC99 /* ProfilesView.swift */; };
+		347DBA482B054F3000CE0276 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347DBA472B054F3000CE0276 /* Client.swift */; };
 		34875B712AF9B51500DC1626 /* BucketsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34875B702AF9B51500DC1626 /* BucketsView.swift */; };
 		34875B732AF9B9A900DC1626 /* SettingsSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34875B722AF9B9A900DC1626 /* SettingsSheetView.swift */; };
-		349444722AFC6D690004BBF6 /* S3Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349444712AFC6D690004BBF6 /* S3Client.swift */; };
-		34CC46642AFC5E1200405688 /* AWSS3 in Frameworks */ = {isa = PBXBuildFile; productRef = 34CC46632AFC5E1200405688 /* AWSS3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,9 +25,12 @@
 		341B63DB2AF43F7D00AFE0EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		341B63DD2AF43F7D00AFE0EB /* s3arch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = s3arch.entitlements; sourceTree = "<group>"; };
 		341B63DF2AF43F7D00AFE0EB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3441BC1B2B0590710021F7A5 /* AddNewProfileSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewProfileSheetView.swift; sourceTree = "<group>"; };
+		3441BC212B05982E0021F7A5 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		3466A7A92B056D6400C9EC99 /* ProfilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesView.swift; sourceTree = "<group>"; };
+		347DBA472B054F3000CE0276 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		34875B702AF9B51500DC1626 /* BucketsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketsView.swift; sourceTree = "<group>"; };
 		34875B722AF9B9A900DC1626 /* SettingsSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSheetView.swift; sourceTree = "<group>"; };
-		349444712AFC6D690004BBF6 /* S3Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = S3Client.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,7 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34CC46642AFC5E1200405688 /* AWSS3 in Frameworks */,
+				342C6A902B0299C6004A8A8E /* SotoS3 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +65,8 @@
 		341B63D62AF43F7C00AFE0EB /* s3arch */ = {
 			isa = PBXGroup;
 			children = (
+				3441BC202B05980C0021F7A5 /* Keychain */,
+				3441BC1E2B0590950021F7A5 /* Views */,
 				349444702AFC6D590004BBF6 /* S3 */,
 				34875B702AF9B51500DC1626 /* BucketsView.swift */,
 				34875B722AF9B9A900DC1626 /* SettingsSheetView.swift */,
@@ -78,10 +86,35 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		3441BC1E2B0590950021F7A5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3441BC1F2B0590AC0021F7A5 /* Profiles */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3441BC1F2B0590AC0021F7A5 /* Profiles */ = {
+			isa = PBXGroup;
+			children = (
+				3441BC1B2B0590710021F7A5 /* AddNewProfileSheetView.swift */,
+				3466A7A92B056D6400C9EC99 /* ProfilesView.swift */,
+			);
+			path = Profiles;
+			sourceTree = "<group>";
+		};
+		3441BC202B05980C0021F7A5 /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				3441BC212B05982E0021F7A5 /* KeychainHelper.swift */,
+			);
+			path = Keychain;
+			sourceTree = "<group>";
+		};
 		349444702AFC6D590004BBF6 /* S3 */ = {
 			isa = PBXGroup;
 			children = (
-				349444712AFC6D690004BBF6 /* S3Client.swift */,
+				347DBA472B054F3000CE0276 /* Client.swift */,
 			);
 			path = S3;
 			sourceTree = "<group>";
@@ -110,7 +143,7 @@
 			);
 			name = s3arch;
 			packageProductDependencies = (
-				34CC46632AFC5E1200405688 /* AWSS3 */,
+				342C6A8F2B0299C6004A8A8E /* SotoS3 */,
 			);
 			productName = s3arch;
 			productReference = 341B63D42AF43F7C00AFE0EB /* s3arch.app */;
@@ -141,7 +174,7 @@
 			);
 			mainGroup = 341B63CB2AF43F7C00AFE0EB;
 			packageReferences = (
-				34CC43952AFC579D00405688 /* XCRemoteSwiftPackageReference "aws-sdk-swift" */,
+				342C687A2B0299BA004A8A8E /* XCRemoteSwiftPackageReference "soto" */,
 			);
 			productRefGroup = 341B63D52AF43F7C00AFE0EB /* Products */;
 			projectDirPath = "";
@@ -169,9 +202,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3466A7AA2B056D6400C9EC99 /* ProfilesView.swift in Sources */,
+				3441BC1C2B0590710021F7A5 /* AddNewProfileSheetView.swift in Sources */,
 				34875B732AF9B9A900DC1626 /* SettingsSheetView.swift in Sources */,
 				34875B712AF9B51500DC1626 /* BucketsView.swift in Sources */,
-				349444722AFC6D690004BBF6 /* S3Client.swift in Sources */,
+				3441BC222B05982E0021F7A5 /* KeychainHelper.swift in Sources */,
+				347DBA482B054F3000CE0276 /* Client.swift in Sources */,
 				341B63D82AF43F7C00AFE0EB /* s3archApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,21 +425,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		34CC43952AFC579D00405688 /* XCRemoteSwiftPackageReference "aws-sdk-swift" */ = {
+		342C687A2B0299BA004A8A8E /* XCRemoteSwiftPackageReference "soto" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/awslabs/aws-sdk-swift";
+			repositoryURL = "https://github.com/soto-project/soto.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.31.0;
+				minimumVersion = 6.8.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		34CC46632AFC5E1200405688 /* AWSS3 */ = {
+		342C6A8F2B0299C6004A8A8E /* SotoS3 */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 34CC43952AFC579D00405688 /* XCRemoteSwiftPackageReference "aws-sdk-swift" */;
-			productName = AWSS3;
+			package = 342C687A2B0299BA004A8A8E /* XCRemoteSwiftPackageReference "soto" */;
+			productName = SotoS3;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
