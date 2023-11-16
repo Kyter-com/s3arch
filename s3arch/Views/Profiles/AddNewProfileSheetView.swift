@@ -50,16 +50,6 @@ struct AddNewProfileSheetView: View {
           Button(
             "Save",
             action: {
-              struct Auth: Codable {
-                let accessKeyInput: String
-                let accessKeySecretInput: String
-                let region: String
-              }
-
-              let auth = Auth(
-                accessKeyInput: accessKeyInput, accessKeySecretInput: accessKeySecretInput,
-                region: region)
-              KeychainHelper.standard.save(auth, service: "s3arch", account: "test")
               dismiss()
             })
         }

@@ -41,7 +41,7 @@ struct BucketsView: View {
         ).sheet(
           isPresented: $showSettingsSheetView,
           content: {
-            SettingsSheetView()
+            Text("Hi")
           })
       }
       .onAppear(perform: loadBuckets)

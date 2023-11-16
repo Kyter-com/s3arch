@@ -12,11 +12,9 @@
 		341B63E02AF43F7D00AFE0EB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 341B63DF2AF43F7D00AFE0EB /* Preview Assets.xcassets */; };
 		342C6A902B0299C6004A8A8E /* SotoS3 in Frameworks */ = {isa = PBXBuildFile; productRef = 342C6A8F2B0299C6004A8A8E /* SotoS3 */; };
 		3441BC1C2B0590710021F7A5 /* AddNewProfileSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3441BC1B2B0590710021F7A5 /* AddNewProfileSheetView.swift */; };
-		3441BC222B05982E0021F7A5 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3441BC212B05982E0021F7A5 /* KeychainHelper.swift */; };
 		3466A7AA2B056D6400C9EC99 /* ProfilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3466A7A92B056D6400C9EC99 /* ProfilesView.swift */; };
 		347DBA482B054F3000CE0276 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347DBA472B054F3000CE0276 /* Client.swift */; };
 		34875B712AF9B51500DC1626 /* BucketsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34875B702AF9B51500DC1626 /* BucketsView.swift */; };
-		34875B732AF9B9A900DC1626 /* SettingsSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34875B722AF9B9A900DC1626 /* SettingsSheetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,11 +24,9 @@
 		341B63DD2AF43F7D00AFE0EB /* s3arch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = s3arch.entitlements; sourceTree = "<group>"; };
 		341B63DF2AF43F7D00AFE0EB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3441BC1B2B0590710021F7A5 /* AddNewProfileSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewProfileSheetView.swift; sourceTree = "<group>"; };
-		3441BC212B05982E0021F7A5 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		3466A7A92B056D6400C9EC99 /* ProfilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesView.swift; sourceTree = "<group>"; };
 		347DBA472B054F3000CE0276 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		34875B702AF9B51500DC1626 /* BucketsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketsView.swift; sourceTree = "<group>"; };
-		34875B722AF9B9A900DC1626 /* SettingsSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSheetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,11 +61,9 @@
 		341B63D62AF43F7C00AFE0EB /* s3arch */ = {
 			isa = PBXGroup;
 			children = (
-				3441BC202B05980C0021F7A5 /* Keychain */,
 				3441BC1E2B0590950021F7A5 /* Views */,
 				349444702AFC6D590004BBF6 /* S3 */,
 				34875B702AF9B51500DC1626 /* BucketsView.swift */,
-				34875B722AF9B9A900DC1626 /* SettingsSheetView.swift */,
 				341B63D72AF43F7C00AFE0EB /* s3archApp.swift */,
 				341B63DB2AF43F7D00AFE0EB /* Assets.xcassets */,
 				341B63DD2AF43F7D00AFE0EB /* s3arch.entitlements */,
@@ -101,14 +95,6 @@
 				3466A7A92B056D6400C9EC99 /* ProfilesView.swift */,
 			);
 			path = Profiles;
-			sourceTree = "<group>";
-		};
-		3441BC202B05980C0021F7A5 /* Keychain */ = {
-			isa = PBXGroup;
-			children = (
-				3441BC212B05982E0021F7A5 /* KeychainHelper.swift */,
-			);
-			path = Keychain;
 			sourceTree = "<group>";
 		};
 		349444702AFC6D590004BBF6 /* S3 */ = {
@@ -204,9 +190,7 @@
 			files = (
 				3466A7AA2B056D6400C9EC99 /* ProfilesView.swift in Sources */,
 				3441BC1C2B0590710021F7A5 /* AddNewProfileSheetView.swift in Sources */,
-				34875B732AF9B9A900DC1626 /* SettingsSheetView.swift in Sources */,
 				34875B712AF9B51500DC1626 /* BucketsView.swift in Sources */,
-				3441BC222B05982E0021F7A5 /* KeychainHelper.swift in Sources */,
 				347DBA482B054F3000CE0276 /* Client.swift in Sources */,
 				341B63D82AF43F7C00AFE0EB /* s3archApp.swift in Sources */,
 			);
