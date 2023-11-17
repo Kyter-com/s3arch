@@ -17,5 +17,3 @@ struct s3archApp: App {
     }
   }
 }
-
-// TODO: Remove extra awssdk targets

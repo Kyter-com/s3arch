@@ -7,9 +7,6 @@
 
 import SwiftUI
 
-// TODO: Have default landing view for 'profiles', where you input region, id keys, etc
-// TODO: Once you click on a profile, it takes you to the buckets view
-
 struct BucketsView: View {
   @State private var bucketNames: [String] = []
   @State private var isLoading = false

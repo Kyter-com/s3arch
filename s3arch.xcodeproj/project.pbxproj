@@ -15,6 +15,8 @@
 		3466A7AA2B056D6400C9EC99 /* ProfilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3466A7A92B056D6400C9EC99 /* ProfilesView.swift */; };
 		347DBA482B054F3000CE0276 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347DBA472B054F3000CE0276 /* Client.swift */; };
 		34875B712AF9B51500DC1626 /* BucketsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34875B702AF9B51500DC1626 /* BucketsView.swift */; };
+		34DD99DB2B06B975009E63E9 /* SimpleKeychain in Frameworks */ = {isa = PBXBuildFile; productRef = 34DD99DA2B06B975009E63E9 /* SimpleKeychain */; };
+		34DD99DE2B06C5DF009E63E9 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DD99DD2B06C5DF009E63E9 /* KeychainService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,7 @@
 		3466A7A92B056D6400C9EC99 /* ProfilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesView.swift; sourceTree = "<group>"; };
 		347DBA472B054F3000CE0276 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		34875B702AF9B51500DC1626 /* BucketsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketsView.swift; sourceTree = "<group>"; };
+		34DD99DD2B06C5DF009E63E9 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34DD99DB2B06B975009E63E9 /* SimpleKeychain in Frameworks */,
 				342C6A902B0299C6004A8A8E /* SotoS3 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -61,6 +65,7 @@
 		341B63D62AF43F7C00AFE0EB /* s3arch */ = {
 			isa = PBXGroup;
 			children = (
+				34DD99DC2B06C5C3009E63E9 /* Keychain */,
 				3441BC1E2B0590950021F7A5 /* Views */,
 				349444702AFC6D590004BBF6 /* S3 */,
 				34875B702AF9B51500DC1626 /* BucketsView.swift */,
@@ -112,6 +117,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		34DD99DC2B06C5C3009E63E9 /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				34DD99DD2B06C5DF009E63E9 /* KeychainService.swift */,
+			);
+			path = Keychain;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -130,6 +143,7 @@
 			name = s3arch;
 			packageProductDependencies = (
 				342C6A8F2B0299C6004A8A8E /* SotoS3 */,
+				34DD99DA2B06B975009E63E9 /* SimpleKeychain */,
 			);
 			productName = s3arch;
 			productReference = 341B63D42AF43F7C00AFE0EB /* s3arch.app */;
@@ -161,6 +175,7 @@
 			mainGroup = 341B63CB2AF43F7C00AFE0EB;
 			packageReferences = (
 				342C687A2B0299BA004A8A8E /* XCRemoteSwiftPackageReference "soto" */,
+				34DD99D92B06B975009E63E9 /* XCRemoteSwiftPackageReference "SimpleKeychain" */,
 			);
 			productRefGroup = 341B63D52AF43F7C00AFE0EB /* Products */;
 			projectDirPath = "";
@@ -191,6 +206,7 @@
 				3466A7AA2B056D6400C9EC99 /* ProfilesView.swift in Sources */,
 				3441BC1C2B0590710021F7A5 /* AddNewProfileSheetView.swift in Sources */,
 				34875B712AF9B51500DC1626 /* BucketsView.swift in Sources */,
+				34DD99DE2B06C5DF009E63E9 /* KeychainService.swift in Sources */,
 				347DBA482B054F3000CE0276 /* Client.swift in Sources */,
 				341B63D82AF43F7C00AFE0EB /* s3archApp.swift in Sources */,
 			);
@@ -322,6 +338,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"s3arch/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -358,6 +375,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"s3arch/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -417,6 +435,14 @@
 				minimumVersion = 6.8.0;
 			};
 		};
+		34DD99D92B06B975009E63E9 /* XCRemoteSwiftPackageReference "SimpleKeychain" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/auth0/SimpleKeychain";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -424,6 +450,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 342C687A2B0299BA004A8A8E /* XCRemoteSwiftPackageReference "soto" */;
 			productName = SotoS3;
+		};
+		34DD99DA2B06B975009E63E9 /* SimpleKeychain */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 34DD99D92B06B975009E63E9 /* XCRemoteSwiftPackageReference "SimpleKeychain" */;
+			productName = SimpleKeychain;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
