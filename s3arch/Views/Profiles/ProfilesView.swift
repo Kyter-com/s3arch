@@ -5,7 +5,10 @@
 //  Created by Nick Reisenauer on 11/15/23.
 //
 
-// TODO: Add icon to profile
+// TODO: Disable auto-capitalization
+// TODO: Form required fields
+// TODO: Name max length
+// TODO: Display name on buckets view
 
 import SimpleKeychain
 import SwiftUI
@@ -31,7 +34,9 @@ struct ProfilesView: View {
           }, id: \.self
         ) { key in
           if let keychainData = profilesState[key] {
-            Text("\(keychainData.name)")
+            NavigationLink(destination: BucketsView(keychainData: keychainData)) {
+              Text("\(keychainData.name)")
+            }
           }
         }
         .onDelete(perform: { indexSet in

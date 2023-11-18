@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct BucketsView: View {
-  @State private var bucketNames: [String] = []
+  let keychainData: KeychainData
+  @State private var bucketNames: [String] = ["test"]
   @State private var isLoading = false
-  @State private var showSettingsSheetView = false
-  private let s3Client = S3Client()
 
   var body: some View {
     NavigationStack {
@@ -27,41 +26,33 @@ struct BucketsView: View {
         }
       }
       .navigationTitle("Buckets")
-      .toolbar {
-        Button(
-          action: {
-            showSettingsSheetView.toggle()
-          },
-          label: {
-            Image(systemName: "gearshape")
-          }
-        ).sheet(
-          isPresented: $showSettingsSheetView,
-          content: {
-            Text("Hi")
-          })
-      }
-      .onAppear(perform: loadBuckets)
+//      .onAppear(perform: loadBuckets)
     }
   }
 
-  private func loadBuckets() {
-    isLoading = true
-    s3Client.listBucketNames().whenComplete { result in
-      switch result {
-      case .success(let bucketNames):
-        DispatchQueue.main.async {
-          self.bucketNames = bucketNames
-          self.isLoading = false
-        }
-      case .failure(let error):
-        print("ERROR: \(error)")
-        self.bucketNames = []
-      }
-    }
-  }
+//    private func loadBuckets() {
+//      isLoading = true
+//      s3Client.listBucketNames().whenComplete { result in
+//        switch result {
+//        case .success(let bucketNames):
+//          DispatchQueue.main.async {
+//            self.bucketNames = bucketNames
+//            self.isLoading = false
+//          }
+//        case .failure(let error):
+//          print("ERROR: \(error)")
+//          self.bucketNames = []
+//        }
+//      }
+//    }
 }
 
 #Preview {
-  BucketsView()
+  let dummyKeychainData = KeychainData(
+    accessKey: "123",
+    accessKeySecret: "123",
+    region: "us-east-2",
+    name: "dummyKeychainData",
+    updatedAt: Date())
+  return BucketsView(keychainData: dummyKeychainData)
 }
