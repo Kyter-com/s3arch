@@ -51,11 +51,7 @@ class S3Client {
       httpClientProvider: .createNew
     )
 
-    guard let region = regionLookup[keychainData.region] else {
-      fatalError("Invalid region: \(keychainData.region)")
-    }
-
-    self.s3 = S3(client: client, region: region)
+    self.s3 = S3(client: client, region: .useast2)
   }
 
   func listBucketNames() -> EventLoopFuture<[String]> {

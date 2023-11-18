@@ -5,9 +5,6 @@
 //  Created by Nick Reisenauer on 11/15/23.
 //
 
-// TODO: Disable auto-capitalization
-// TODO: Form required fields
-// TODO: Name max length
 // TODO: Display name on buckets view
 
 import SimpleKeychain

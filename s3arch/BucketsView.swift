@@ -26,25 +26,11 @@ struct BucketsView: View {
         }
       }
       .navigationTitle("Buckets")
-//      .onAppear(perform: loadBuckets)
+      .onAppear {
+        print("Keychain Data", keychainData)
+      }
     }
   }
-
-//    private func loadBuckets() {
-//      isLoading = true
-//      s3Client.listBucketNames().whenComplete { result in
-//        switch result {
-//        case .success(let bucketNames):
-//          DispatchQueue.main.async {
-//            self.bucketNames = bucketNames
-//            self.isLoading = false
-//          }
-//        case .failure(let error):
-//          print("ERROR: \(error)")
-//          self.bucketNames = []
-//        }
-//      }
-//    }
 }
 
 #Preview {
