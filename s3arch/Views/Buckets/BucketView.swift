@@ -49,45 +49,45 @@ func addParts(_ parts: [String], to items: inout [FileItem]) {
 }
 // TODO: Clean up this file!!!
 struct FolderView: View {
-    let folder: FileItem
-    @State private var selectedFile: FileItem?
-    
-    var body: some View {
-        List {
-            ForEach(folder.children ?? []) { item in
-                if item.isFolder {
-                    NavigationLink(destination: FolderView(folder: item)) {
-                        Text(item.name)
-                    }
-                } else {
-                    HStack {
-                        Text(item.name)
-                        Spacer()
-                        Button(action: { selectedFile = item }) {
-                            Image(systemName: "info.circle")
-                        }
-                    }
-                }
+  let folder: FileItem
+  @State private var selectedFile: FileItem?
+
+  var body: some View {
+    List {
+      ForEach(folder.children ?? []) { item in
+        if item.isFolder {
+          NavigationLink(destination: FolderView(folder: item)) {
+            Text(item.name)
+          }
+        } else {
+          HStack {
+            Text(item.name)
+            Spacer()
+            Button(action: { selectedFile = item }) {
+              Image(systemName: "info.circle")
             }
+          }
         }
-        .navigationTitle(folder.name)
-        .sheet(item: $selectedFile) { file in
-            InfoView(file: file)
-        }
+      }
     }
+    .navigationTitle(folder.name)
+    .sheet(item: $selectedFile) { file in
+      InfoView(file: file)
+    }
+  }
 }
 
 struct InfoView: View {
-    let file: FileItem
+  let file: FileItem
 
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text("Name: \(file.name)")
-            // Add more information about the file here
-        }
-        .padding()
-        .navigationTitle("File Info")
+  var body: some View {
+    VStack(alignment: .leading) {
+      Text("Name: \(file.name)")
+      // Add more information about the file here
     }
+    .padding()
+    .navigationTitle("File Info")
+  }
 }
 
 struct BucketView: View {
@@ -96,7 +96,7 @@ struct BucketView: View {
   @State private var fileNames: [String] = []
   @StateObject private var s3Client: S3Client
   @State private var fileItems: [FileItem] = []
-      @State private var selectedFile: FileItem?
+  @State private var selectedFile: FileItem?
 
   init(keychainData: KeychainData, bucketName: String) {
     self.keychainData = keychainData
@@ -112,14 +112,14 @@ struct BucketView: View {
             Text(item.name)
           }
         } else {
-                    HStack {
-                        Text(item.name)
-                        Spacer()
-                        Button(action: { selectedFile = item }) {
-                            Image(systemName: "info.circle")
-                        }
-                    }
-                }
+          HStack {
+            Text(item.name)
+            Spacer()
+            Button(action: { selectedFile = item }) {
+              Image(systemName: "info.circle")
+            }
+          }
+        }
       }
     }
     .onAppear {
@@ -133,7 +133,7 @@ struct BucketView: View {
       }
     }
     .sheet(item: $selectedFile) { file in
-        InfoView(file: file)
+      InfoView(file: file)
     }
     .onDisappear {
       do {
