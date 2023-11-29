@@ -64,8 +64,6 @@ struct BucketsView: View {
   }
 }
 
-// TODO: Add search to profile and bucket views!
-
 #Preview {
   let dummyKeychainData = KeychainData(
     accessKey: "123",

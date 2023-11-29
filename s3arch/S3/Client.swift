@@ -10,8 +10,6 @@ import NIO
 import SotoCore
 import SotoS3
 
-// TODO: Add search
-
 class S3Client: ObservableObject {
   let keychainData: KeychainData
   let client: AWSClient

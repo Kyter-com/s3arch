@@ -15,6 +15,7 @@ struct ProfilesView: View {
 
   @State private var showAddNewProfileSheetView = false
   @State private var profilesState: [String: KeychainData] = [:]
+  @State private var searchText = ""
 
   /// State used for deleting a profile item
   @State private var selectedKey: String = ""
@@ -24,11 +25,14 @@ struct ProfilesView: View {
     NavigationStack {
       List {
         ForEach(
-          profilesState.keys.sorted {
-            guard let date1 = profilesState[$0]?.updatedAt, let date2 = profilesState[$1]?.updatedAt
-            else { return false }
-            return date1 > date2
-          }, id: \.self
+          profilesState.keys
+            .filter { searchText.isEmpty || profilesState[$0]?.name.contains(searchText) ?? false }
+            .sorted {
+              guard let date1 = profilesState[$0]?.updatedAt,
+                let date2 = profilesState[$1]?.updatedAt
+              else { return false }
+              return date1 > date2
+            }, id: \.self
         ) { key in
           if let keychainData = profilesState[key] {
             NavigationLink(destination: BucketsView(keychainData: keychainData)) {
@@ -80,6 +84,11 @@ struct ProfilesView: View {
         loadProfilesState()
       }
     }
+    .searchable(
+      text: $searchText,
+      placement: .navigationBarDrawer(displayMode: .always),
+      prompt: "Profile name"
+    )
   }
 
   private func loadProfilesState() {
