@@ -5,12 +5,13 @@
 //  Created by Nick Reisenauer on 11/2/23.
 //
 
-// Format with swift-format ./Documents/GitHub/s3arch/ -i -r
+// Format: swift-format ./Documents/GitHub/s3arch/ -i -r
+// Lint:   swift-format lint ./Documents/GitHub/s3arch/ -r
 
 import SwiftUI
 
 @main
-struct s3archApp: App {
+struct S3archApp: App {
   var body: some Scene {
     WindowGroup {
       ProfilesView()

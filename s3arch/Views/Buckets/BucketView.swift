@@ -63,9 +63,11 @@ struct FolderView: View {
           HStack {
             Text(item.name)
             Spacer()
-            Button(action: { selectedFile = item }) {
-              Image(systemName: "info.circle")
-            }
+            Button(
+              action: { selectedFile = item },
+              label: {
+                Image(systemName: "info.circle")
+              })
           }
         }
       }
@@ -115,9 +117,11 @@ struct BucketView: View {
           HStack {
             Text(item.name)
             Spacer()
-            Button(action: { selectedFile = item }) {
-              Image(systemName: "info.circle")
-            }
+            Button(
+              action: { selectedFile = item },
+              label: {
+                Image(systemName: "info.circle")
+              })
           }
         }
       }
