@@ -11,10 +11,10 @@ import SwiftUI
 struct AddNewProfileSheetView: View {
   @Environment(\.dismiss) private var dismiss
 
-  @State var name = ""
-  @State var accessKeyInput = ""
-  @State var accessKeySecretInput = ""
-  @State var region = "us-east-2"
+  @State var name: String = ""
+  @State var accessKeyInput: String = ""
+  @State var accessKeySecretInput: String = ""
+  @State var region: String = "us-east-2"
   // TODO: Add all the regions in and map them to the correct .dot notation
 
   private let keychainService = KeychainService()

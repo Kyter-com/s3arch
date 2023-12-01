@@ -7,6 +7,7 @@
 
 // Format: swift-format ./Documents/GitHub/s3arch/ -i -r
 // Lint:   swift-format lint ./Documents/GitHub/s3arch/ -r
+// Both:   swift-format ./Documents/GitHub/s3arch/ -i -r && swift-format lint ./Documents/GitHub/s3arch/ -r
 
 import SwiftUI
 

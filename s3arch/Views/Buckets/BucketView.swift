@@ -74,21 +74,8 @@ struct FolderView: View {
     }
     .navigationTitle(folder.name)
     .sheet(item: $selectedFile) { file in
-      InfoView(file: file)
+      FileInfoView(file: file)
     }
-  }
-}
-
-struct InfoView: View {
-  let file: FileItem
-
-  var body: some View {
-    VStack(alignment: .leading) {
-      Text("Name: \(file.name)")
-      // Add more information about the file here
-    }
-    .padding()
-    .navigationTitle("File Info")
   }
 }
 
@@ -137,7 +124,7 @@ struct BucketView: View {
       }
     }
     .sheet(item: $selectedFile) { file in
-      InfoView(file: file)
+      FileInfoView(file: file)
     }
     .onDisappear {
       do {

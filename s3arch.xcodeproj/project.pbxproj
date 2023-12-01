@@ -15,6 +15,7 @@
 		3466A7AA2B056D6400C9EC99 /* ProfilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3466A7A92B056D6400C9EC99 /* ProfilesView.swift */; };
 		347DBA482B054F3000CE0276 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347DBA472B054F3000CE0276 /* Client.swift */; };
 		34875B712AF9B51500DC1626 /* BucketsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34875B702AF9B51500DC1626 /* BucketsView.swift */; };
+		349784B72B1A8D0900C52141 /* FileInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349784B62B1A8D0900C52141 /* FileInfoView.swift */; };
 		349BFAF72B0EB2DC009209AB /* BucketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349BFAF62B0EB2DC009209AB /* BucketView.swift */; };
 		34DD99DB2B06B975009E63E9 /* SimpleKeychain in Frameworks */ = {isa = PBXBuildFile; productRef = 34DD99DA2B06B975009E63E9 /* SimpleKeychain */; };
 		34DD99DE2B06C5DF009E63E9 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DD99DD2B06C5DF009E63E9 /* KeychainService.swift */; };
@@ -30,6 +31,7 @@
 		3466A7A92B056D6400C9EC99 /* ProfilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesView.swift; sourceTree = "<group>"; };
 		347DBA472B054F3000CE0276 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		34875B702AF9B51500DC1626 /* BucketsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketsView.swift; sourceTree = "<group>"; };
+		349784B62B1A8D0900C52141 /* FileInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileInfoView.swift; sourceTree = "<group>"; };
 		349BFAF62B0EB2DC009209AB /* BucketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketView.swift; sourceTree = "<group>"; };
 		34DD99DD2B06C5DF009E63E9 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +93,7 @@
 			children = (
 				349BFAF52B0EB2C5009209AB /* Buckets */,
 				3441BC1F2B0590AC0021F7A5 /* Profiles */,
+				349784B62B1A8D0900C52141 /* FileInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				3466A7AA2B056D6400C9EC99 /* ProfilesView.swift in Sources */,
 				3441BC1C2B0590710021F7A5 /* AddNewProfileSheetView.swift in Sources */,
 				34875B712AF9B51500DC1626 /* BucketsView.swift in Sources */,
+				349784B72B1A8D0900C52141 /* FileInfoView.swift in Sources */,
 				34DD99DE2B06C5DF009E63E9 /* KeychainService.swift in Sources */,
 				347DBA482B054F3000CE0276 /* Client.swift in Sources */,
 				341B63D82AF43F7C00AFE0EB /* s3archApp.swift in Sources */,
