@@ -47,45 +47,16 @@ func addParts(_ parts: [String], to items: inout [FileItem]) {
     }
   }
 }
-// TODO: Clean up this file!!!
-struct FolderView: View {
-  let folder: FileItem
-  @State private var selectedFile: FileItem?
-
-  var body: some View {
-    List {
-      ForEach(folder.children ?? []) { item in
-        if item.isFolder {
-          NavigationLink(destination: FolderView(folder: item)) {
-            Text(item.name)
-          }
-        } else {
-          HStack {
-            Text(item.name)
-            Spacer()
-            Button(
-              action: { selectedFile = item },
-              label: {
-                Image(systemName: "info.circle")
-              })
-          }
-        }
-      }
-    }
-    .navigationTitle(folder.name)
-    .sheet(item: $selectedFile) { file in
-      FileInfoView(file: file)
-    }
-  }
-}
 
 struct BucketView: View {
-  let keychainData: KeychainData
-  let bucketName: String
-  @State private var fileNames: [String] = []
   @StateObject private var s3Client: S3Client
+
+  @State private var fileNames: [String] = []
   @State private var fileItems: [FileItem] = []
   @State private var selectedFile: FileItem?
+
+  let keychainData: KeychainData
+  let bucketName: String
 
   init(keychainData: KeychainData, bucketName: String) {
     self.keychainData = keychainData
@@ -113,6 +84,7 @@ struct BucketView: View {
         }
       }
     }
+    .navigationTitle(bucketName)
     .onAppear {
       Task {
         do {

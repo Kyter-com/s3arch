@@ -19,5 +19,3 @@ struct S3archApp: App {
     }
   }
 }
-
-// TODO: Setup dependabot and CodeQL https://blog.eidinger.info/github-embraces-swift-and-provides-code-analysis-security-alerts-and-dependency-updates-for-swift-projects

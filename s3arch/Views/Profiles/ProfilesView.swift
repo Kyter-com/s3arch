@@ -5,21 +5,18 @@
 //  Created by Nick Reisenauer on 11/15/23.
 //
 
-// TODO: Display name on buckets view
-
 import SimpleKeychain
 import SwiftUI
 
 struct ProfilesView: View {
-  private let keychainService = KeychainService()
-
-  @State private var showAddNewProfileSheetView = false
+  @State private var showAddNewProfileSheetView: Bool = false
+  @State private var showSettingsSheetView: Bool = false
   @State private var profilesState: [String: KeychainData] = [:]
-  @State private var searchText = ""
-
-  /// State used for deleting a profile item
+  @State private var searchText: String = ""
   @State private var selectedKey: String = ""
   @State private var showingDeleteAlert: Bool = false
+
+  private let keychainService = KeychainService()
 
   var body: some View {
     NavigationStack {
@@ -63,19 +60,36 @@ struct ProfilesView: View {
           },
           secondaryButton: .cancel())
       }
-      .navigationTitle("Profiles").toolbar {
-        Button(
-          action: {
-            showAddNewProfileSheetView.toggle()
-          },
-          label: {
-            Image(systemName: "plus.circle")
-          }
-        ).sheet(
-          isPresented: $showAddNewProfileSheetView,
-          content: {
-            AddNewProfileSheetView()
-          })
+      .navigationTitle("Profiles")
+      .toolbar {
+        ToolbarItem(placement: .topBarTrailing) {
+          Button(
+            action: {
+              showAddNewProfileSheetView.toggle()
+            },
+            label: {
+              Image(systemName: "plus.circle")
+            }
+          ).sheet(
+            isPresented: $showAddNewProfileSheetView,
+            content: {
+              AddNewProfileSheetView()
+            })
+        }
+        ToolbarItem(placement: .topBarLeading) {
+          Button(
+            action: {
+              showSettingsSheetView.toggle()
+            },
+            label: {
+              Image(systemName: "gearshape")
+            }
+          ).sheet(
+            isPresented: $showSettingsSheetView,
+            content: {
+              SettingsSheetView()
+            })
+        }
       }
     }
     .onAppear(perform: loadProfilesState)
